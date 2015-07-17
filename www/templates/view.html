@@ -1,6 +1,63 @@
 $def with (post)
+$var id:2
+$var title: $post.title
+<div class="single">
+	 <div class="container">
+		  <div class="col-md-8 single-main">
 
-<h1>$post.title</h1>
-$datestr(post.posted_on)<br/>
-
-$post.content
+			  <div class="single-grid">
+					<img src="../static/images/post1.jpg" alt=""/>
+					<p>$post.content</p>
+			  </div>
+			 <ul class="comment-list">
+		  		   <h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">admin</a></h5>
+		  		   <li><img src="../static/images/avatar.png" class="img-responsive" alt="">
+		  		   <div class="desc">
+		  		   <p>View all posts by: <a href="#" title="Posts by admin" rel="author">admin</a></p>
+		  		   </div>
+		  		   <div class="clearfix"></div>
+		  		   </li>
+		  	  </ul>
+			  <div class="content-form">
+					 <h3>评论</h3>
+					<form>
+						<input type="text" placeholder="名称" required/>
+						<input type="text" placeholder="邮件" required/>
+						<textarea placeholder="评论内容"></textarea>
+						<input type="submit" value="发送"/>
+				   </form>
+			  </div>
+		  </div>
+			  <div class="col-md-4 content-right">
+				 <div class="recent">
+					 <h3>最新发表</h3>
+					 <ul>
+					 <li><a href="#">大圣归来</a></li>
+					 </ul>
+				 </div>
+				 <div class="comments">
+					 <h3>最新评论</h3>
+					 <ul>
+					 <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+					 </ul>
+				 </div>
+				 <div class="clearfix"></div>
+				 <div class="archives">
+					 <h3>归档</h3>
+					 <ul>
+					 <li><a href="#">October 2013</a></li>
+					 </ul>
+				 </div>
+				 <div class="categories">
+					 <h3>分类</h3>
+					 <ul>
+					 <li><a href="#">Java</a></li>
+					 <li><a href="#">Python</a></li>
+					 </ul>
+				 </div>
+				 <div class="clearfix"></div>
+			  </div>
+			  <div class="clearfix"></div>
+		  </div>
+	  </div>
+</div>
