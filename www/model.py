@@ -1,7 +1,8 @@
+# -*- coding:utf-8 -*-
 import web, datetime
 
-db = web.database(dbn='mysql',user='shen', pw='shen', db='blog')
-
+db = web.database(dbn='mysql',user='shen', pw='shen', db='blog', charset='utf8')
+#db = web.database(dbn='sqlite', db='.\\DATA\\blog.db')
 def get_posts():
     return db.select('entries', order='id DESC')
 
