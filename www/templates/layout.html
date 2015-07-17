@@ -1,0 +1,84 @@
+$def with (page)
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>$page.title</title>
+	<link href="../static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="../static/css/style.css" rel='stylesheet' type='text/css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"
+	/>
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<!--script-->
+	<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../static/js/move-top.js"></script>
+	<script type="text/javascript" src="../static/js/easing.js"></script>
+	<!--/script-->
+	<script type="text/javascript">
+			jQuery(document).ready(function($$) {
+				$$(".scroll").click(function(event){
+					event.preventDefault();
+					$$('html,body').animate({scrollTop:$$(this.hash).offset().top},900);
+				});
+			});
+	</script>
+<!---->
+
+</head>
+<body>
+<!---header---->
+<div class="header">
+	 <div class="container">
+		  <div class="logo">
+			  <a href="/"><img src="../static/images/logo.jpg" title="" /></a>
+		  </div>
+			 <!---start-top-nav---->
+			 <div class="top-menu">
+				 <div class="search">
+					 <form>
+					 <input type="text" placeholder="" required="">
+					 <input type="submit" value=""/>
+					 </form>
+				 </div>
+				 <span class="menu"> </span>
+				 <ul>
+						<li id="1" class="active"><a href="/">主页</a></li>
+						<li id="2"><a href="blog">博客</a></li>
+						<li id="3"><a href="about">关于</a></li>
+						<li id="4"><a href="contact">联系</a></li>
+						<div class="clearfix"> </div>
+				 </ul>
+			 </div>
+			 <div class="clearfix"></div>
+			<script>
+				$$("span.menu").click(function(){
+					//$$(this).removeClass("active");
+					$$(".top-menu ul").slideToggle("slow" , function(){
+						//$$(this).addClass("active");
+					});
+				});
+				$$("span.menu+ul").find("li").removeClass("active");
+				$$("#" + $page.id).addClass("active");
+			</script>
+				<!---//End-top-nav---->
+	 </div>
+</div>
+<!--/header-->
+$:page
+<!---->
+<div class="footer">
+	 <div class="container">
+	 <p>Copyrights © 2015 Blog All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+	 </div>
+</div>
+
+
