@@ -1,6 +1,10 @@
-""" using webpy 0.3 """
+""" Basic blog using webpy 0.3 """
+# -*- coding:utf-8 -*-
+#import sys
 import web
 import model
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 
 ### Url mappings
 
@@ -10,6 +14,9 @@ urls = (
     '/new', 'New',
     '/delete/(\d+)', 'Delete',
     '/edit/(\d+)', 'Edit',
+    '/blog', 'Blog',
+    '/about', 'About',
+    '/contact', 'Contact',
 )
 
 
@@ -17,7 +24,7 @@ urls = (
 t_globals = {
     'datestr': web.datestr
 }
-render = web.template.render('templates', base='base', globals=t_globals)
+render = web.template.render('templates', base='layout', globals=t_globals)
 
 
 class Index:
@@ -39,10 +46,10 @@ class View:
 class New:
 
     form = web.form.Form(
-        web.form.Textbox('title', web.form.notnull, 
+        web.form.Textbox('title', web.form.notnull,
             size=30,
             description="Post title:"),
-        web.form.Textarea('content', web.form.notnull, 
+        web.form.Textarea('content', web.form.notnull,
             rows=30, cols=80,
             description="Post content:"),
         web.form.Button('Post entry'),
@@ -84,6 +91,26 @@ class Edit:
         model.update_post(int(id), form.d.title, form.d.content)
         raise web.seeother('/')
 
+class Blog:
+
+    def GET(self):
+        """ Show page """
+        posts = model.get_posts()
+        return render.blog(posts)
+
+class About:
+
+    def GET(self):
+        """ Show page """
+        #posts = model.get_posts()
+        return render.about()
+
+class Contact:
+
+    def GET(self):
+        """ Show page """
+        #posts = model.get_posts()
+        return render.contact()
 
 app = web.application(urls, globals())
 
