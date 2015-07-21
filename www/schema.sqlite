@@ -1,0 +1,16 @@
+BEGIN TRANSACTION;
+CREATE TABLE `comments` (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`blog_id`	TEXT NOT NULL,
+	`nickname`	TEXT,
+	`email`	TEXT,
+	`comment`	TEXT,
+	`created_on`	TEXT
+);
+CREATE TABLE "blogs" (
+	`id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`title`	TEXT,
+	`content`	TEXT,
+	`posted_on`	TEXT
+);
+COMMIT;
